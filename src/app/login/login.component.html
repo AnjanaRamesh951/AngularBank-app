@@ -6,18 +6,18 @@
             <div class="col" style=" background-color: white; border: 2px solid black;;">
                 <h2 style="text-align: center; color: darkslategrey;">Login</h2>
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" (change)="accNumber($event)" [value]="acNumber" id="uname" placeholder="username"
+                    <input type="text" class="form-control" #acno [value]="acNumber" id="uname" placeholder="Account Number"
                         aria-label="Recipient's username" aria-describedby="basic-addon2">
                 </div>
                 <div class="input-group mb-3">
-                    <input type="password" class="form-control" (change)="pswdChange($event)" id="pwd" placeholder="password"
+                    <input type="password" class="form-control" #pswd id="pwd" placeholder="password"
                         aria-label="password" aria-describedby="basic-addon2">
                 </div>
                 <div class="input-group mb-3">
                     <p style="color: red;" id="error"></p>
                 </div>
                 <div class="input-group mb-3 login-btn-center">
-                    <button (click)="login()" class="btn btn-primary">Login</button>
+                    <button (click)="login(acno,pswd)" class="btn btn-primary">Login</button>
                 </div>
             </div>
             <div class="col"></div>

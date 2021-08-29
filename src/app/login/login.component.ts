@@ -30,9 +30,15 @@ export class LoginComponent implements OnInit {
   pswdChange(event:any){
     this.pswd=event.target.value
   }
-  login(){
-    var acno=this.acno;
-    var pswd=this.pswd;
+  login(a:any,p:any){
+    console.log(a);
+    
+    var acno=a.value;
+    console.log(acno);
+    
+    var pswd=p.value;
+    console.log(pswd);
+    
     let accDetails=this.users
     if(acno in accDetails){
       if(pswd==accDetails[acno]["password"]){
@@ -47,5 +53,22 @@ export class LoginComponent implements OnInit {
     }
     
   }
+  // login(){
+  //   var acno=this.acno;
+  //   var pswd=this.pswd;
+  //   let accDetails=this.users
+  //   if(acno in accDetails){
+  //     if(pswd==accDetails[acno]["password"]){
+  //       alert("Login Successfully")
+  //     }
+  //     else{
+  //       alert("invalid password")
+  //     }
+  //   }
+  //   else{
+  //     alert("invalid Account number")
+  //   }
+    
+  // }
 
 }
