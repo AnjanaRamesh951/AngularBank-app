@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router} from '@angular/router'
 
 @Component({
   selector: 'app-login',
@@ -18,31 +19,25 @@ export class LoginComponent implements OnInit {
 
   }
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
-  accNumber(event:any){
-    //console.log(event.target.value);
-    this.acno=event.target.value
+ 
+  login(){
+    //;console.log(a);
     
-  }
-  pswdChange(event:any){
-    this.pswd=event.target.value
-  }
-  login(a:any,p:any){
-    console.log(a);
-    
-    var acno=a.value;
+    var acno=this.acno;
     console.log(acno);
     
-    var pswd=p.value;
+    var pswd=this.pswd;
     console.log(pswd);
     
     let accDetails=this.users
     if(acno in accDetails){
       if(pswd==accDetails[acno]["password"]){
         alert("Login Successfully")
+        this.router.navigateByUrl("dashboard")
       }
       else{
         alert("invalid password")
@@ -53,22 +48,7 @@ export class LoginComponent implements OnInit {
     }
     
   }
-  // login(){
-  //   var acno=this.acno;
-  //   var pswd=this.pswd;
-  //   let accDetails=this.users
-  //   if(acno in accDetails){
-  //     if(pswd==accDetails[acno]["password"]){
-  //       alert("Login Successfully")
-  //     }
-  //     else{
-  //       alert("invalid password")
-  //     }
-  //   }
-  //   else{
-  //     alert("invalid Account number")
-  //   }
-    
-  // }
+  
 
 }
+

@@ -1,12 +1,16 @@
 <div class="container">
-    <h1>{{aim}}</h1>
+    
     <div class="login-div">
         <div class="row">
             <div class="col"></div>
             <div class="col" style=" background-color: white; border: 2px solid black;;">
-                <h2 style="text-align: center; color: darkslategrey;">Login</h2>
+                <h2 style="text-align: center; color: darkslategrey;">Register</h2>
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" [(ngModel)]="acno"   id="acno" placeholder="Account Number"
+                        aria-label="Recipient's username" aria-describedby="basic-addon2">
+                </div>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" [(ngModel)]="uname"   id="uname" placeholder="Username"
                         aria-label="Recipient's username" aria-describedby="basic-addon2">
                 </div>
                 <div class="input-group mb-3">
@@ -17,9 +21,7 @@
                     <p style="color: red;" id="error"></p>
                 </div>
                 <div class="input-group mb-3 login-btn-center">
-                    <button (click)="login()" class="btn btn-primary">Login</button> 
-                    <a routerLink="register">Sign Up</a>
-
+                    <div (click)="register()" class="btn btn-primary">Register</div>
                 </div>
             </div>
             <div class="col"></div>
