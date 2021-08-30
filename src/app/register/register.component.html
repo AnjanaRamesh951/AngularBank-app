@@ -5,25 +5,30 @@
             <div class="col"></div>
             <div class="col" style=" background-color: white; border: 2px solid black;;">
                 <h2 style="text-align: center; color: darkslategrey;">Register</h2>
+                <form (ngSubmit)="register()">
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" [(ngModel)]="acno"   id="acno" placeholder="Account Number"
+                    
+                    <input type="text" class="form-control" name="acno" [(ngModel)]="acno"   id="acno" placeholder="Account Number"
                         aria-label="Recipient's username" aria-describedby="basic-addon2">
                 </div>
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" [(ngModel)]="uname"   id="uname" placeholder="Username"
+                    <input type="text" class="form-control" name="uname" [(ngModel)]="uname"   id="uname" placeholder="Username"
                         aria-label="Recipient's username" aria-describedby="basic-addon2">
                 </div>
                 <div class="input-group mb-3">
-                    <input type="password" class="form-control"  id="pswd" [(ngModel)]="pswd"  placeholder="password"
+                    <input type="password" class="form-control" name="pswd" id="pswd" [(ngModel)]="pswd"  placeholder="password"
                         aria-label="password" aria-describedby="basic-addon2">
                 </div>
                 <div class="input-group mb-3">
                     <p style="color: red;" id="error"></p>
                 </div>
                 <div class="input-group mb-3 login-btn-center">
-                    <div (click)="register()" class="btn btn-primary">Register</div>
+                    <button type="submit" class="btn btn-primary">Register</button>
+               
                 </div>
+            </form>
             </div>
+       
             <div class="col"></div>
         </div>
     </div>

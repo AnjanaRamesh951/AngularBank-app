@@ -6,7 +6,7 @@ import { Router} from '@angular/router'
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit { 
   aim="Welcome to SBL Bank"
   acNumber="Account Number Please"
   acno=""
@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
     let accDetails=this.users
     if(acno in accDetails){
       if(pswd==accDetails[acno]["password"]){
-        alert("Login Successfully")
+        alert("Login Successfully") 
         this.router.navigateByUrl("dashboard")
       }
       else{
